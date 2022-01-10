@@ -50,12 +50,12 @@ task prepareInnoSetupFiles(group: 'distribution') {
         }
 
         copy {
-            from("${rootDir}/gradle/innosetup/gazeplayicon.ico")
+            from("${rootDir}/gradle/innosetup/beraicon.ico")
             into(innoSetupDir)
         }
 
         copy {
-            from("${rootDir}/gradle/innosetup/gazeplayicon.bmp")
+            from("${rootDir}/gradle/innosetup/beraicon.bmp")
             into(innoSetupDir)
         }
     }

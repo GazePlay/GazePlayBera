@@ -24,10 +24,10 @@ AppPublisherURL=https://github.com/GazePlay/GazePlay
 AppSupportURL=https://github.com/GazePlay/GazePlay/issues
 AppUpdatesURL=https://github.com/GazePlay/GazePlay/releases
 
-SetupIconFile=gazeplayicon.ico
+SetupIconFile=beraIcon.ico
 WizardStyle=modern
-WizardImageFile=gazeplayicon.bmp
-WizardSmallImageFile=gazeplayicon.bmp
+WizardImageFile=beraicon.bmp
+WizardSmallImageFile=beraicon.bmp
 
 DefaultDirName={commonpf}\\Bera
 DefaultGroupName=Bera
@@ -42,16 +42,16 @@ SolidCompression=yes
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "gazeplayicon.ico"; DestDir: "{app}\\bin"; Flags: ignoreversion
+Source: "beraicon.ico"; DestDir: "{app}\\bin"; Flags: ignoreversion
 Source: "..\\${unpackedDirectory}\\bin\\*"; DestDir: "{app}\\bin"; Flags: ignoreversion
 Source: "..\\${unpackedDirectory}\\lib\\*"; DestDir: "{app}\\lib"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "..\\${unpackedDirectory}\\license\\*"; DestDir: "{app}\\license"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\\Bera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; IconFilename: "{app}\\bin\\gazeplayicon.ico"; Flags: runminimized
-Name: "{group}\\Uninstall Bera"; Filename: "{uninstallexe}"; IconFilename: "{app}\\bin\\gazeplayicon.ico"
-Name: "{commondesktop}\\Bera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; Tasks: desktopicon; IconFilename: "{app}\\bin\\gazeplayicon.ico"
+Name: "{group}\\Bera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; IconFilename: "{app}\\bin\\beraicon.ico"; Flags: runminimized
+Name: "{group}\\Uninstall Bera"; Filename: "{uninstallexe}"; IconFilename: "{app}\\bin\\beraicon.ico"
+Name: "{commondesktop}\\Bera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; Tasks: desktopicon; IconFilename: "{app}\\bin\\beraicon.ico"
 
 [Run]
 Filename: "{app}\\bin\\gazeplay-windows.bat"; Description: "{cm:LaunchProgram,Bera}"; Flags: shellexec postinstall skipifsilent
