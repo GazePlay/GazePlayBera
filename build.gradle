@@ -238,6 +238,7 @@ task('downloadAndExtractLinuxDependecies').dependsOn('downloadAndExtractLinuxJRE
 
 macosDistTar.dependsOn(downloadAndExtractMacosJRE)
 windowsDistZip.dependsOn(downloadAndExtractWindowsJRE)
+windowsx32DistZip.dependsOn(downloadAndExtractWindowsJREx32)
 linuxDistTar.dependsOn(downloadAndExtractLinuxDependecies)
 
 tasks.withType(Tar){
