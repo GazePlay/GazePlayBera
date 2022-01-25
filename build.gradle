@@ -29,7 +29,7 @@ apply from: "${rootDir}/gradle/jre.gradle"
 apply from: "${rootDir}/gradle/drivers.gradle"
 
 allprojects {
-    group = 'com.github.gazeplay'
+    group = 'com.github.gazeplayBera'
 
     repositories {
         mavenLocal()
@@ -224,7 +224,7 @@ distributions {
         contents {
             with distributions.main.contents
             from("build/reports")
-            from("build/bin/gazeplay-macos.sh") {
+            from("build/bin/gazeplayBera-macos.sh") {
                 into 'bin'
             }
             from("build/jre/macos") {

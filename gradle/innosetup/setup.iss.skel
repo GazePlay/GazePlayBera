@@ -20,9 +20,9 @@ AppName=GazeplayBera
 AppVersion=${applicationVersion}
 AppVerName=GazeplayBera ${applicationVersion}
 AppPublisher=Univ. Grenoble Alpes - LIG - GETALP
-AppPublisherURL=https://github.com/GazePlay/GazePlay
-AppSupportURL=https://github.com/GazePlay/GazePlay/issues
-AppUpdatesURL=https://github.com/GazePlay/GazePlay/releases
+AppPublisherURL=https://github.com/GazePlay/GazePlayBera
+AppSupportURL=https://github.com/GazePlay/GazePlayBera/issues
+AppUpdatesURL=https://github.com/GazePlay/GazePlayBera/releases
 
 SetupIconFile=beraIcon.ico
 WizardStyle=modern
@@ -49,9 +49,9 @@ Source: "..\\${unpackedDirectory}\\license\\*"; DestDir: "{app}\\license"; Flags
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\\GazeplayBera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; IconFilename: "{app}\\bin\\beraicon.ico"; Flags: runminimized
+Name: "{group}\\GazeplayBera"; Filename: "{app}\\bin\\gazeplayBera-windows.bat"; IconFilename: "{app}\\bin\\beraicon.ico"; Flags: runminimized
 Name: "{group}\\Uninstall GazeplayBera"; Filename: "{uninstallexe}"; IconFilename: "{app}\\bin\\beraicon.ico"
-Name: "{commondesktop}\\GazeplayBera"; Filename: "{app}\\bin\\gazeplay-windows.bat"; Tasks: desktopicon; IconFilename: "{app}\\bin\\beraicon.ico"
+Name: "{commondesktop}\\GazeplayBera"; Filename: "{app}\\bin\\gazeplayBera-windows.bat"; Tasks: desktopicon; IconFilename: "{app}\\bin\\beraicon.ico"
 
 [Run]
 Filename: "{app}\\bin\\gazeplayBera-windows.bat"; Description: "{cm:LaunchProgram,GazeplayBera}"; Flags: shellexec postinstall skipifsilent
