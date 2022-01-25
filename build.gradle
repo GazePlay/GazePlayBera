@@ -14,10 +14,10 @@ plugins {
 }
 
 // Add -PSpotBugs=false to the Gradle Command Line to not run spotbugs
-boolean spotbugsEnabled = Boolean.parseBoolean(project.getProperties().get('SpotBugs')) ?: true
+boolean spotbugsEnabled = false
 
 // Add -Ppmd=false to the Gradle Command Line to not run PMD
-boolean pmdEnabled = Boolean.parseBoolean(project.getProperties().get('pmd')) ?: true
+boolean pmdEnabled = false
 
 logging.captureStandardOutput LogLevel.INFO
 
