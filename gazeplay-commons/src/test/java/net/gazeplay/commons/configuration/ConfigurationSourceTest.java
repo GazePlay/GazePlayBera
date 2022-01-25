@@ -21,6 +21,13 @@ class ConfigurationSourceTest {
     private final File resourcesFolder = new File(localDataFolder);
 
     @Test
+    void shouldCreateFromPropertiesResource() {
+        Configuration result = ConfigurationSource.createFromPropertiesResource(new File(resourcesFolder, "GazePlay.properties"));
+
+        assertEquals("eng", result.getLanguage());
+    }
+
+    @Test
     void givenPropertiesFileNotFound_shouldCreateDefaultProperties() {
         Configuration result = ConfigurationSource.createFromPropertiesResource(new File(localDataFolder, "wrong.properties"));
 
