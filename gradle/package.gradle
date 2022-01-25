@@ -1,6 +1,6 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
-task('packageAllDists').dependsOn('linuxDistTar', 'windowsDistZip', 'macosDistTar', 'assembleNoJREDist')
+task('packageAllDists').dependsOn('linuxDistTar', 'windowsDistZip','windowsx32DistZip', 'macosDistTar', 'assembleNoJREDist')
 
 task packageApp(dependsOn: ['packageAllDists',
                             'downloadLicenses',
@@ -10,7 +10,7 @@ task packageApp(dependsOn: ['packageAllDists',
 }
 
 task scriptsForRelease(type: Copy, group: 'distribution') {
-    from "${rootDir}/gazeplay-dist/src/main/bin"
+    from "${rootDir}/gazeplayBera-dist/src/main/bin"
     into "${rootDir}/build/bin"
     filter(
         ReplaceTokens, tokens: [VERSION: project.version, NAME: project.name]
