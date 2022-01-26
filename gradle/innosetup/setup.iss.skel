@@ -29,8 +29,8 @@ WizardStyle=modern
 WizardImageFile=beraicon.bmp
 WizardSmallImageFile=beraicon.bmp
 
-DefaultDirName={commonpf}\\Gazeplay
-DefaultGroupName=Gazeplay
+DefaultDirName={commonpf}\\GazeplayBera
+DefaultGroupName=GazeplayBera
 LicenseFile=licence.txt
 
 OutputDir=..\\distributions
