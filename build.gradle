@@ -29,7 +29,7 @@ apply from: "${rootDir}/gradle/jre.gradle"
 apply from: "${rootDir}/gradle/drivers.gradle"
 
 allprojects {
-    group = 'com.github.gazeplayBera'
+    group = 'com.github.gazeplay'
 
     repositories {
         mavenLocal()
@@ -180,7 +180,7 @@ distributions {
         contents {
             with distributions.main.contents
             from("build/reports")
-            from("build/bin/gazeplay-windows.bat") {
+            from("build/bin/gazeplayBera-windows.bat") {
                 into 'bin'
             }
             from("build/jre/windows-x64") {
@@ -194,7 +194,7 @@ distributions {
         contents {
             with distributions.main.contents
             from("build/reports")
-            from("build/bin/gazeplay-windows.bat") {
+            from("build/bin/gazeplayBera-windows.bat") {
                 into 'bin'
             }
             from("build/jre/windows-x32") {
@@ -208,7 +208,7 @@ distributions {
         contents {
             with distributions.main.contents
             from("build/reports")
-            from("build/bin/gazeplay-linux.sh") {
+            from("build/bin/gazeplayBera-linux.sh") {
                 into 'bin'
             }
             from("build/jre/linux-x64") {
@@ -224,7 +224,7 @@ distributions {
         contents {
             with distributions.main.contents
             from("build/reports")
-            from("build/bin/gazeplay-macos.sh") {
+            from("build/bin/gazeplayBera-macos.sh") {
                 into 'bin'
             }
             from("build/jre/macos") {
