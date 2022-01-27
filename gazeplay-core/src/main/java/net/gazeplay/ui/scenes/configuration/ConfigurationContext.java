@@ -211,16 +211,6 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
             addToGrid(grid, currentFormRow, label, input);
         }
 
-        /*if (Utils.isWindows()) {
-            {
-                I18NText label = new I18NText(translator, "CreateShortCut", COLON);
-
-                VBox input = buildVariantShortcutMaker(config, configurationContext);
-
-                addToGrid(grid, currentFormRow, label, input);
-            }
-        }*/
-
         // Games settings
         addCategoryTitle(grid, currentFormRow, new I18NText(translator, "BeraSettings", COLON));
 
@@ -854,7 +844,7 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
         generateButton.setOnAction(e3 -> {
             if (currentSelectedGame != null) {
                 String gameOption = "--game \"" + currentSelectedGame.getGameSummary().getNameCode() + "\"";
-                String variantOption = currentSelectedVariant == null ? "" : "--variant \"" + currentSelectedVariant.toString() + "\"";
+                String variantOption = currentSelectedVariant == null ? "" : "--variant \"" + currentSelectedVariant + "\"";
                 Path currentRelativePath = Paths.get("");
                 String currentBinPath = currentRelativePath.toAbsolutePath().toString();
                 ShellLink slwithvariant = ShellLink.createLink(currentBinPath + "\\gazeplay-windows.bat")
@@ -1107,9 +1097,9 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
                     StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (NullPointerException ne) {
-            log.debug(String.format("Could not find %s: %s", resourcePath, ne.toString()));
+            log.debug(String.format("Could not find %s: %s", resourcePath, ne));
         } catch (IOException ie) {
-            log.debug(String.format("Could not copy file at %s to %s: %s", resourcePath, gazePlayMusicFolder, ie.toString()));
+            log.debug(String.format("Could not copy file at %s to %s: %s", resourcePath, gazePlayMusicFolder, ie));
         }
     }
 
