@@ -210,7 +210,16 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
 
             addToGrid(grid, currentFormRow, label, input);
         }
-        /*
+
+        /*if (Utils.isWindows()) {
+            {
+                I18NText label = new I18NText(translator, "CreateShortCut", COLON);
+
+                VBox input = buildVariantShortcutMaker(config, configurationContext);
+
+                addToGrid(grid, currentFormRow, label, input);
+            }
+        }*/
 
         // Games settings
         addCategoryTitle(grid, currentFormRow, new I18NText(translator, "BeraSettings", COLON));
@@ -238,7 +247,49 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
             addToGrid(grid, currentFormRow, label, input);
         }
 
-         */
+        /*{
+            I18NText label = new I18NText(translator, "QuitKey", COLON);
+
+            ChoiceBox<String> input = buildQuitKeyChooser(config);
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
+        {
+            I18NText label = new I18NText(translator, "QuestionLength", COLON);
+
+            Spinner<Double> input = buildSpinner(0.5, 20, (double) config.getQuestionLength() / 1000,
+                0.5, config.getQuestionLengthProperty());
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
+        {
+            I18NText label = new I18NText(translator, "ReaskQuestionOnFail", COLON);
+
+            CheckBox input = buildCheckBox(config.getReaskQuestionOnFail());
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
+        {
+            I18NText label = new I18NText(translator, "EnableRewardSound", COLON);
+
+            CheckBox input = buildCheckBox(config.getEnableRewardSoundProperty());
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
+        {
+            I18NText label = new I18NText(translator, "Limiter Time", COLON);
+
+            HBox input = buildLimiterTime(config, translator);
+
+            addToGrid(grid, currentFormRow, label, input);
+        }
+        {
+            I18NText label = new I18NText(translator, "Limiter Score", COLON);
+
+            HBox input = buildLimiterScore(config, translator);
+
+            addToGrid(grid, currentFormRow, label, input);
+        }*/
 
         addCategoryTitle(grid, currentFormRow, new I18NText(translator, "EyeTrackerSettings", COLON));
         // Eye Tracking settings
@@ -803,7 +854,7 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
         generateButton.setOnAction(e3 -> {
             if (currentSelectedGame != null) {
                 String gameOption = "--game \"" + currentSelectedGame.getGameSummary().getNameCode() + "\"";
-                String variantOption = currentSelectedVariant == null ? "" : "--variant \"" + currentSelectedVariant + "\"";
+                String variantOption = currentSelectedVariant == null ? "" : "--variant \"" + currentSelectedVariant.toString() + "\"";
                 Path currentRelativePath = Paths.get("");
                 String currentBinPath = currentRelativePath.toAbsolutePath().toString();
                 ShellLink slwithvariant = ShellLink.createLink(currentBinPath + "\\gazeplay-windows.bat")
@@ -1056,9 +1107,9 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
                     StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (NullPointerException ne) {
-            log.debug(String.format("Could not find %s: %s", resourcePath, ne));
+            log.debug(String.format("Could not find %s: %s", resourcePath, ne.toString()));
         } catch (IOException ie) {
-            log.debug(String.format("Could not copy file at %s to %s: %s", resourcePath, gazePlayMusicFolder, ie));
+            log.debug(String.format("Could not copy file at %s to %s: %s", resourcePath, gazePlayMusicFolder, ie.toString()));
         }
     }
 

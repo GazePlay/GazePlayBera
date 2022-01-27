@@ -246,9 +246,10 @@ public class StatsContext extends GraphicalContext<BorderPane> {
 
     void addAllToGrid(Stats stats, Translator translator, GridPane grid, boolean alignLeft) {
         AtomicInteger currentFormRow = new AtomicInteger(0);
-
+        /*
         Text value;
         String labelValue;
+         */
 
         if (stats.variantType.equals("WordComprehension")){
 
