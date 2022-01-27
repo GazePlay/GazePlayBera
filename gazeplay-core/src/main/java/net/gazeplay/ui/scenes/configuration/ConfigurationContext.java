@@ -210,6 +210,7 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
 
             addToGrid(grid, currentFormRow, label, input);
         }
+        /*
 
         // Games settings
         addCategoryTitle(grid, currentFormRow, new I18NText(translator, "BeraSettings", COLON));
@@ -236,6 +237,8 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
 
             addToGrid(grid, currentFormRow, label, input);
         }
+
+         */
 
         addCategoryTitle(grid, currentFormRow, new I18NText(translator, "EyeTrackerSettings", COLON));
         // Eye Tracking settings
