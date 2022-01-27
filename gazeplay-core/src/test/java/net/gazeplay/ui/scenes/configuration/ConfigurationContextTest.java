@@ -70,12 +70,14 @@ class ConfigurationContextTest {
     @Mock
     private ConfigurationContext mockContext;
 
+    /*
     @BeforeEach
     void setup() {
         MockitoAnnotations.initMocks(this);
         when(mockGazePlay.getTranslator()).thenReturn(mockTranslator);
         when(mockGazePlay.getCurrentScreenDimensionSupplier()).thenReturn(() -> new Dimension2D(20d, 20d));
     }
+     */
 
     @Test
     void shouldReturnToMenuOnHomeButtonPress() throws InterruptedException {
