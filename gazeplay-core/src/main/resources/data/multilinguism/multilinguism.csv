@@ -379,6 +379,7 @@ BeraSettings,,,,,,Settings for Bera games,,Paramètres pour les jeux Bera,,,,,,,
 QuestionTime,,,,,,Time for ask the question,,Temps pour énoncer la question,,,,,,,,,,,,
 TransitionTime,,,,,,Transition time,,Temps de transition,,,,,,,,,,,,
 ActivateAutomaticModeQuestion,,,,,,Activate automatic mode for questions,,Activer le mode automatique pour les questions,,,,,,,,,,,,
+HorizontalImages,,,,,,Columnar images,,Images en colonnes,,,,,,,,,,,,
 
 BeraV1,,,,,,Bera version 1,,Bera version 1,,,,,,,,,,,,
 BeraV2,,,,,,Bera version 2,,Bera version 2,,,,,,,,,,,,

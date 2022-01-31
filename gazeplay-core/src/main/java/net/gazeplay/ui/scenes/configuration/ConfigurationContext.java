@@ -246,7 +246,12 @@ public class ConfigurationContext extends GraphicalContext<BorderPane> {
 
             addToGrid(grid, currentFormRow, label, input);
         }
+        {
+            I18NText label = new I18NText(translator, "HorizontalImages", COLON);
+            CheckBox input = buildCheckBox(config.getColumnarImagesEnabledProperty());
 
+            addToGrid(grid, currentFormRow, label, input);
+        }
         /*{
             I18NText label = new I18NText(translator, "QuitKey", COLON);
 

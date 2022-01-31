@@ -36,8 +36,8 @@ class PictureCard extends Group {
     private final ImageView imageRectangle;
     private final Rectangle notifImageRectangle;
 
-    private final double initialWidth;
-    private final double initialHeight;
+    private double initialWidth;
+    private double initialHeight;
 
     private final double initialPositionX;
     private final double initialPositionY;
@@ -71,12 +71,11 @@ class PictureCard extends Group {
         this.gameContext = gameContext;
         this.stats = stats;
         this.gameInstance = gameInstance;
-
         this.imagePath = imagePath;
 
-        this.imageRectangle = createImageView(posX, posY, width, height, imagePath);
+        this.imageRectangle = createImageView(this.initialPositionX, this.initialPositionY, this.initialWidth, this.initialHeight, imagePath);
 
-        this.progressIndicator = buildProgressIndicator(width, height);
+        this.progressIndicator = buildProgressIndicator(this.initialWidth, this.initialHeight);
 
         this.notifImageRectangle = createNotifImageRectangle();
 
@@ -223,6 +222,7 @@ class PictureCard extends Group {
 
     private ImageView createImageView(double posX, double posY, double width, double height,
                                       @NonNull String imagePath) {
+
         final Image image = new Image(imagePath);
 
         ImageView result = new ImageView(image);
@@ -248,6 +248,9 @@ class PictureCard extends Group {
     }
 
     private Rectangle createNotifImageRectangle() {
+
+        Configuration config = ActiveConfigurationContext.getInstance();
+
         final Image image = new Image("data/common/images/blackCircle.png");
 
         double imageWidth = image.getWidth();
@@ -257,8 +260,15 @@ class PictureCard extends Group {
         double rectangleWidth = imageRectangle.getFitWidth() / 40;
         double rectangleHeight = imageHeightToWidthRatio * rectangleWidth;
 
-        double positionX = imageRectangle.getX() + 5;
-        double positionY = imageRectangle.getY() + 35;
+        double positionX = 0;
+        double positionY = 0;
+        if (config.isColumnarImagesEnabled()){
+            positionX = imageRectangle.getX() + 5;
+            positionY = imageRectangle.getY() + 15;
+        }else {
+            positionX = imageRectangle.getX() + 5;
+            positionY = imageRectangle.getY() + 35;
+        }
 
         Rectangle notifImageRectangle = new Rectangle(rectangleWidth, rectangleHeight);
         notifImageRectangle.setFill(new ImagePattern(image));

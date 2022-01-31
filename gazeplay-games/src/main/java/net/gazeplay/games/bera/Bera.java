@@ -303,6 +303,7 @@ public class Bera implements GameLifeCycle {
     net.gazeplay.games.bera.RoundDetails pickAndBuildRandomPictures(final int numberOfImagesToDisplayPerRound, final int winnerImageIndexAmongDisplayedImages) {
 
         final Configuration config = gameContext.getConfiguration();
+        Configuration configActive = ActiveConfigurationContext.getInstance();
 
         int directoriesCount;
         final String directoryName;
@@ -396,9 +397,25 @@ public class Bera implements GameLifeCycle {
             winnerP2 = true;
         }
 
+        double gap = 0;
+        double widthImg = 0;
+        double heightImg = 0;
+        double posYImage = gameSizing.height * posY;
+
+        if (configActive.isColumnarImagesEnabled()){
+            gap = gameSizing.shift + 750;
+            widthImg = (gameSizing.width - 50) / 2.0;
+            heightImg = gameSizing.height / 2.0;
+            posYImage = gameSizing.height * posY + 50;
+        }else {
+            gap = gameSizing.shift + 25;
+            widthImg = gameSizing.width - 50;
+            heightImg = gameSizing.height;
+        }
+
         final net.gazeplay.games.bera.PictureCard pictureCard1 = new net.gazeplay.games.bera.PictureCard(
-            gameSizing.width * posX + gameSizing.shift + 25,
-            gameSizing.height * posY, gameSizing.width - 50, gameSizing.height, gameContext,
+            gameSizing.width * posX + gap,
+            posYImage, widthImg, heightImg, gameContext,
             winnerP1, imageP1 + "", stats, this);
 
         pictureCardList.add(pictureCard1);
@@ -411,11 +428,15 @@ public class Bera implements GameLifeCycle {
 
         targetAOIList.add(targetAOI1);
 
-        posX++;
+        if (configActive.isColumnarImagesEnabled()){
+            posYImage = gameSizing.height / 1.5 - 100;
+        }else {
+            posX++;
+        }
 
         final net.gazeplay.games.bera.PictureCard pictureCard2 = new net.gazeplay.games.bera.PictureCard(
-            gameSizing.width * posX + gameSizing.shift + 25,
-            gameSizing.height * posY, gameSizing.width - 50, gameSizing.height, gameContext,
+            gameSizing.width * posX + gap,
+            posYImage, widthImg, heightImg, gameContext,
             winnerP2, imageP2 + "", stats, this);
 
         pictureCardList.add(pictureCard2);
